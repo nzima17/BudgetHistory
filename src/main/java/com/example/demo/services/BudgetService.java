@@ -3,12 +3,13 @@ package com.example.demo.services;
 import com.example.demo.model.BudgetHistory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+@Service
 public class BudgetService {
     static final String serverName = "DESKTOP-1G0TK5F";
     static final String dbName = "memento_mori";
@@ -17,8 +18,8 @@ public class BudgetService {
     public final String password = "abcdefg";
 
 
-//    @Autowired
-//    RestTemplateBuilder restTemplateBuilder;
+    @Autowired
+    RestTemplateBuilder restTemplateBuilder;
 
     public BudgetHistory selectById(int id) throws ClassNotFoundException, SQLException {
 
